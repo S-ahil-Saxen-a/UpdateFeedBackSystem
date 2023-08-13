@@ -83,7 +83,7 @@ const CodePage = () => {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="Enter the descriptive version of your code </>"
+                        placeholder="Simple toggle button using react hooks"
                         {...field}
                       />
                     </FormControl>

@@ -75,7 +75,7 @@ const MusicPage = () => {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="Turn your prompt into a beautiful listening experience"
+                        placeholder="Piano solo tune with flute"
                         {...field}
                       />
                     </FormControl>

@@ -81,7 +81,7 @@ const ConversationPage = () => {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="What's in your mind?,  just ask!"
+                        placeholder="What is the radius of earth?"
                         {...field}
                       />
                     </FormControl>
