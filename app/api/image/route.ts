@@ -14,6 +14,9 @@ export async function POST(req: Request) {
     const body = await req.json();
     const { prompt, amount = 1, resolution = "512x512" } = body;
 
+    console.log("BOdy " + JSON.stringify(body));
+    // return JSON.stringify({})
+
     if (!userId) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
@@ -34,13 +37,21 @@ export async function POST(req: Request) {
       return new NextResponse("Resolution is required!", { status: 400 });
     }
 
+    console.log("prompt " + prompt);
+
     const response = await openai.createImage({
-      prompt : prompt,
-      n : parseInt(amount, 10), // converts string into integer and 10 denotes decimal representation, 2nd arg is optional
+      prompt: prompt,
+      n: parseInt(amount, 10), // converts string into integer and 10 denotes decimal representation, 2nd arg is optional
       size: resolution,
     });
 
-    return NextResponse.json(response.data.data);  } catch (error) {
+    console.log("Sahil", response.data);
+
+    console.log("Saxena ", response.data.data);
+
+    console.log(response.config);
+    return NextResponse.json(response.data.data);
+  } catch (error) {
     console.log("[IMAGE_ERROR]", error);
     return new NextResponse("Internal error", { status: 500 });
   }
